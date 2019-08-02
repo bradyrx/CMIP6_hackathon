@@ -1,0 +1,28 @@
+# Observational Products
+observations:
+    somffn:
+        time_range:
+            - 1982
+            - 2017
+            
+    jena:
+        time_range:
+            - 1982
+            - 2017
+    jma:
+        time_range:
+            - 1990
+            - 2017
+    csir:
+        time_range:
+            - 1990
+            - 2015
+    niesnn:
+        time_range:
+            - 1990
+            - 2017
+    # NOTE: This is ignored in the MMM due to its small time range.
+    lsce:
+        time_range:
+            - 2001
+            - 2016
