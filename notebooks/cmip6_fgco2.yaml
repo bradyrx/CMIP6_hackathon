@@ -1,0 +1,173 @@
+# Riley X. Brady
+# August 2019
+# Grid 'gn' is the native grid. 'gr' is a remapped grid they provided.
+# Note that I took the native grid if available. If I used 'gn', it's the 
+# only one they provided to CMIP6 (such as NOAA, but they claim it's conservative remapped.)
+BCC:
+    BCC-CSM2-MR:
+        documentation: 
+            - https://www.geosci-model-dev.net/12/1573/2019/gmd-12-1573-2019-discussion.html
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1, 2, 3]
+        grid: 'gn'
+        version: 'v20181126'
+        lat: 'lat'
+        lon: 'lon'
+        # Their netCDF claims [kg m-2 s-1] but this conversion causes totally wrong units.
+        # The only logical thing I could find would be that it's in [g m-2 s-1], which
+        # puts it on the same level as the other models.
+        units: 'g m-2 s-1'
+        calendar: '365_day'
+        # Convert to [Pg C yr-1]
+        conversion: 60*60*24*365/1e15
+    BCC-ESM1:
+        documentation: 
+            - https://www.geosci-model-dev-discuss.net/gmd-2019-172/
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1, 2, 3]
+        grid: 'gn'
+        version: 'v20181129'
+        lat: 'lat'
+        lon: 'lon'
+        # Their netCDF claims [kg m-2 s-1] but this conversion causes totally wrong units.
+        # The only logical thing I could find would be that it's in [g m-2 s-1], which
+        # puts it on the same level as the other models.
+        units: 'g m-2 s-1'
+        calendar: '365_day'
+        conversion: 60*60*24*365/1e15
+        
+CCCma:
+    CanESM5: 
+        documentation:
+            - https://www.geosci-model-dev-discuss.net/gmd-2019-177/
+            - https://open.canada.ca/ckan/en/dataset/b62e6793-d674-5f41-847d-47d173333ce1
+        ensemble: 
+            1:
+                forcing: 1
+                physics: 1
+                members: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+            2:
+                forcing: 1
+                # Not exactly sure what the change in physics is.
+                physics: 2
+                members: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        grid: 'gn'
+        version: 'v20190429'
+        lat: 'j'
+        lon: 'i'
+        units: 'kg m-2 s-1'
+        calendar: '365_day'
+        conversion: -1*60*60*24*365/1e12
+
+CNRM-CERFACS:
+    CNRM-ESM2-1:
+        documentation: 
+            - http://www.umr-cnrm.fr/cmip6/spip.php?article10   
+        ensemble:
+            1:
+                # Not sure what the forcing change is. They don't offer any standard (f=1) forcing for CMIP6.
+                forcing: 2
+                physics: 1
+                members: [1, 2, 3, 4, 5]
+        grid: 'gn'
+        version: 'v20181206'
+        lat: 'y'
+        lon: 'x'
+        units: 'kg m-2 s-1'
+        calendar: 'gregorian'
+        conversion: -1*60*60*24*365.25/1e12
+    
+IPSL:
+    IPSL-CM6A-LR:
+        documentation: 
+            - https://cera-www.dkrz.de/WDCC/ui/cerasearch/cmip6?input=CMIP6.CMIP.IPSL.IPSL-CM6A-LR
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
+        grid: 'gn'
+        version: 'v20180803'
+        lat: 'y'
+        lon: 'x'
+        units: 'kg m-2 s-1'
+        calendar: 'gregorian'
+        conversion: -1*60*60*24*365.25/1e12
+    
+NCAR:
+    CESM2:
+        documentation: 
+            - http://www.cesm.ucar.edu/models/cesm2/
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+        grid: 'gn'
+        version: 'v20190308'
+        lat: 'nlat'
+        lon: 'nlon'
+        units: 'kg m-2 s-1'
+        calendar: 'noleap'
+        conversion: -1*60*60*24*365/1e12
+    
+NOAA-GFDL:
+    GFDL-CM4: # Note: this is saved out in 20-year averages, so multiple files.
+        documentation:
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1]
+        grid: 'gr'
+        version: 'v20180701'
+        lat: 'lat'
+        lon: 'lon'
+        units: 'kg m-2 s-1'
+        calendar: 'noleap'
+        conversion: -1*60*60*24*365/1e12
+        
+    
+    GFDL-ESM4: # Note: this is saved out in 20-year averages, so multiple files.
+        documentation:
+        ensemble:
+            1:
+                forcing: 1
+                physics: 1
+                members: [1]
+        grid: 'gr'
+        version: 'v20180701'
+        lat: 'lat'
+        lon: 'lon'
+        units: 'kg m-2 s-1'
+        calendar: 'noleap'
+        conversion: -1*60*60*24*365/1e12
+    
+MOHC:
+    UKESM1-0-LL:
+        documentation:
+        ensemble:
+            1:
+                forcing: 2
+                physics: 1
+                # There's a member 9 but it doesn't have fgco2 
+                members: [1, 2, 3, 4, 8,]                
+            # ensemble 2 doesn't have fgco2
+#            2:
+#                forcing: 3
+#                physics: 1
+#                members: [5, 6, 7]
+        grid: 'gn'
+        version: 'v20190627'
+        lat: 'j'
+        lon: 'i'
+        units: 'kg m-2 s-1'
+        calendar: '360_day'
+        # They report in kgCO2 instead of kgC.
+        conversion: -1*60*60*24*360/1e12 /(44.01 / 12.0107)
