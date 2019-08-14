@@ -16,6 +16,8 @@ BCC:
         version: 'v20181126'
         lat: 'lat'
         lon: 'lon'
+        # Name of the actual latitude field variable.
+        lat_grid: 'lat'
         # Their netCDF claims [kg m-2 s-1] but this conversion causes totally wrong units.
         # The only logical thing I could find would be that it's in [g m-2 s-1], which
         # puts it on the same level as the other models.
@@ -35,6 +37,7 @@ BCC:
         version: 'v20181129'
         lat: 'lat'
         lon: 'lon'
+        lat_grid: 'lat'
         # Their netCDF claims [kg m-2 s-1] but this conversion causes totally wrong units.
         # The only logical thing I could find would be that it's in [g m-2 s-1], which
         # puts it on the same level as the other models.
@@ -61,6 +64,7 @@ CCCma:
         version: 'v20190429'
         lat: 'j'
         lon: 'i'
+        lat_grid: 'latitude'
         units: 'kg m-2 s-1'
         calendar: '365_day'
         conversion: -1*60*60*24*365/1e12
@@ -79,6 +83,7 @@ CNRM-CERFACS:
         version: 'v20181206'
         lat: 'y'
         lon: 'x'
+        lat_grid: 'lat'
         units: 'kg m-2 s-1'
         calendar: 'gregorian'
         conversion: -1*60*60*24*365.25/1e12
@@ -96,6 +101,7 @@ IPSL:
         version: 'v20180803'
         lat: 'y'
         lon: 'x'
+        lat_grid: 'nav_lat'
         units: 'kg m-2 s-1'
         calendar: 'gregorian'
         conversion: -1*60*60*24*365.25/1e12
@@ -113,6 +119,7 @@ NCAR:
         version: 'v20190308'
         lat: 'nlat'
         lon: 'nlon'
+        lat_grid: 'lat'
         units: 'kg m-2 s-1'
         calendar: 'noleap'
         conversion: -1*60*60*24*365/1e12
@@ -129,6 +136,7 @@ NOAA-GFDL:
         version: 'v20180701'
         lat: 'lat'
         lon: 'lon'
+        lat_grid: 'lat'
         units: 'kg m-2 s-1'
         calendar: 'noleap'
         conversion: -1*60*60*24*365/1e12
@@ -145,6 +153,7 @@ NOAA-GFDL:
         version: 'v20180701'
         lat: 'lat'
         lon: 'lon'
+        lat_grid: 'lat'
         units: 'kg m-2 s-1'
         calendar: 'noleap'
         conversion: -1*60*60*24*365/1e12
@@ -167,6 +176,7 @@ MOHC:
         version: 'v20190627'
         lat: 'j'
         lon: 'i'
+        lat_grid: 'latitude'
         units: 'kg m-2 s-1'
         calendar: '360_day'
         # They report in kgCO2 instead of kgC.
