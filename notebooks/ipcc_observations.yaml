@@ -3,7 +3,7 @@ observations:
     somffn:
         time_range:
             - 1982
-            - 2017
+            - 2015
             
     jena:
         time_range:
