@@ -3,6 +3,7 @@ observations:
     somffn:
         time_range:
             - 1982
+            # 2017 for global; 2015 for SO?
             - 2015
             
     jena:
@@ -17,10 +18,10 @@ observations:
         time_range:
             - 1990
             - 2015
-    niesnn:
-        time_range:
-            - 1990
-            - 2017
+#    niesnn: We don't know the units here.
+#        time_range:
+#            - 1990
+#            - 2017
     # NOTE: This is ignored in the MMM due to its small time range.
     lsce:
         time_range:
